@@ -18,7 +18,7 @@ resource "aws_vpc" "this" {
   tags = {
     Name = var.vpc_config.name
   }
-  
+
 }
 
 resource "aws_subnet" "this" {
@@ -29,7 +29,7 @@ resource "aws_subnet" "this" {
 
 
   tags = {
-    Name = each.key
+    Name   = each.key
     Access = each.value.public ? "Public" : "Private"
   }
 
